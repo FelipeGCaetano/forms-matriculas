@@ -16,9 +16,20 @@ h1 {
   margin-bottom: 30px; /* Espaço abaixo do título */
 }
 
+
 .forms-container {
   display: flex; /* Flexbox para os formulários lado a lado */
   gap: 20px; /* Espaçamento entre os formulários */
+}
+
+th {
+  text-align: center;
+  vertical-align: middle; 
+}
+
+td {
+  text-align: center;
+  vertical-align: middle; 
 }
 
 .form-item {
@@ -35,11 +46,16 @@ h1 {
 .form-container {
   max-width: 400px; /* Define uma largura máxima para o formulário */
   width: 100%; /* Permite que o formulário ocupe a largura disponível */
+  height: 100%;
   padding: 20px; /* Adiciona espaçamento interno */
   border: 1px solid #ced4da; /* Borda leve */
   border-radius: 10px; /* Bordas arredondadas */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para dar profundidade */
   background-color: #ffffff; /* Fundo branco para o formulário */
+}
+
+.form-control {
+  text-align: center;
 }
 
 .submit-button {
@@ -97,4 +113,22 @@ h2 {
   display: flex; /* Usar flexbox */
   gap: 10px; /* Espaçamento entre os botões */
   margin-top: 20px; /* Espaço acima dos botões */
+}
+
+.filter-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center; 
+}
+
+.filter-container input {
+  padding: 10px; 
+  border-radius: 5px; 
+  border: 1px solid #ced4da; 
+}
+
+.Action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
