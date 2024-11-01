@@ -10,6 +10,9 @@ function Indications() {
   const [selectedStatus, setSelectedStatus] = useState(''); // Estado para armazenar o status selecionado
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5; // Número de indicações por página
+  const [errorMessage, setErrorMessage] = useState('');
+
+  setErrorMessage('');
 
   useEffect(() => {
     const fetchIndications = async () => {
@@ -18,7 +21,7 @@ function Indications() {
         if (response.data.status === 'success') {
           setIndications(response.data.data);
         } else {
-          console.error('Erro ao obter indicações:', response.data.message);
+          setErrorMessage(response.data.message);
         }
       } catch (error) {
         console.error('Erro ao fazer a requisição:', error);
@@ -56,7 +59,7 @@ function Indications() {
         ));
         setSelectedStatus(''); // Limpa o status selecionado
       } else {
-        console.error('Erro ao atualizar o status:', response.data.message);
+        setErrorMessage(response.data.message);
       }
     } catch (error) {
       console.error('Erro ao fazer a requisição:', error);
