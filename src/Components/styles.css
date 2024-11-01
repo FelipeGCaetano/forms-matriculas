@@ -42,7 +42,59 @@ h1 {
   background-color: #ffffff; /* Fundo branco para o formulário */
 }
 
-/* styles.css */
 .submit-button {
-  margin-top: 20px; /* Ajuste o valor conforme necessário para maior ou menor espaço */
+  margin-top: 20px; 
+}
+
+/* .indications-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto; 
+} */
+
+h2 {
+  text-align: center; 
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left; 
+}
+
+.table th, .table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.table th {
+  background-color: #f4f4f4;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination button {
+  margin: 0 4px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination .active {
+  background-color: #0056b3;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex; /* Usar flexbox */
+  gap: 10px; /* Espaçamento entre os botões */
+  margin-top: 20px; /* Espaço acima dos botões */
 }

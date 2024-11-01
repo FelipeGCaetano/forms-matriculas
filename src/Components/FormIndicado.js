@@ -55,7 +55,7 @@ function FormsIndicado({ onDataChange }) {
             <option value="">Selecione o turno</option>
             <option value="MANHA">Manhã</option>
             <option value="TARDE">Tarde</option>
-            <option value="NOITE">Noite</option>
+            <option value="INTEGRAL">Integral</option>
           </Form.Select>
         </Form.Group>
 

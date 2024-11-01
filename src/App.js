@@ -1,8 +1,9 @@
 // App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './home';
 import IndicationForm from './Components/IndicationForm';
+import Indications from './Components/Indications'
+import Home from './Components/home';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/indicar" element={<IndicationForm />} />
+        <Route path="/indicacoes" element={<Indications />} />
         <Route path="*" element={<Navigate to="/home" />} /> {/* Redireciona rotas desconhecidas para /home */}
       </Routes>
     </Router>
