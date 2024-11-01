@@ -1,0 +1,48 @@
+/* styles.css */
+html, body {
+  height: 100%; /* Garante que o corpo ocupa toda a altura da tela */
+  margin: 0; /* Remove margens padrão do corpo */
+  display: flex; /* Usando Flexbox para centralização */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  flex-direction: column; /* Direção vertical dos itens */
+}
+
+.app-container {
+  text-align: center; /* Centraliza o texto */
+}
+
+h1 {
+  margin-bottom: 30px; /* Espaço abaixo do título */
+}
+
+.forms-container {
+  display: flex; /* Flexbox para os formulários lado a lado */
+  gap: 20px; /* Espaçamento entre os formulários */
+}
+
+.form-item {
+  display: flex; /* Flexbox para empilhar cabeçalho e formulário */
+  flex-direction: column; /* Direção vertical dos itens dentro de form-item */
+  align-items: center; /* Centraliza o conteúdo dentro de cada item */
+}
+
+.form-header {
+  margin-bottom: 10px; /* Espaço abaixo do texto do cabeçalho */
+  font-weight: bold; /* Texto em negrito */
+}
+
+.form-container {
+  max-width: 400px; /* Define uma largura máxima para o formulário */
+  width: 100%; /* Permite que o formulário ocupe a largura disponível */
+  padding: 20px; /* Adiciona espaçamento interno */
+  border: 1px solid #ced4da; /* Borda leve */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para dar profundidade */
+  background-color: #ffffff; /* Fundo branco para o formulário */
+}
+
+/* styles.css */
+.submit-button {
+  margin-top: 20px; /* Ajuste o valor conforme necessário para maior ou menor espaço */
+}
