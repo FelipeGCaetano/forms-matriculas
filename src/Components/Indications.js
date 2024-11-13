@@ -2,6 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './styles.css';
+import { config } from 'dotenv';
+config()
+
+const backendUrl = process.env.BACKEND_URL
 
 function Indications() {
   const [indications, setIndications] = useState([]);
@@ -17,7 +21,7 @@ function Indications() {
   useEffect(() => {
     const fetchIndications = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/api/indications');
+        const response = await axios.get(`${backendUrl}/api/indications`);
         if (response.data.status === 'success') {
           setIndications(response.data.data);
         } else {
@@ -49,7 +53,7 @@ function Indications() {
   // Função para enviar a requisição com o status selecionado
   const handleStatusUpdate = async (itemId) => {
     try {
-      const response = await axios.put(`http://localhost:3333/api/indications/${itemId}`, {
+      const response = await axios.put(`${backendUrl}/api/indications/${itemId}`, {
         status: selectedStatus,
       });
       if (response.data.status === 'success') {

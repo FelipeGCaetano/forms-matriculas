@@ -5,6 +5,10 @@ import FormsIndicador from './FormIndicador';
 import FormsIndicado from './FormIndicado';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import { config } from 'dotenv';
+config()
+
+const backendUrl = process.env.BACKEND_URL
 
 function IndicationForm() {
   const [formData1, setFormData1] = useState({ name: '', classs: '', shift: '', guardian: '', email: '' });
@@ -24,7 +28,7 @@ function IndicationForm() {
     const combinedData = { student: formData1, indicator: formData2 };
 
     try {
-      const response = await axios.post('http://localhost:3333/api/indications', combinedData);
+      const response = await axios.post(`${backendUrl}/api/indications`, combinedData);
       if (response.data.status === 'success') {
         setSuccessMessage(response.data.message);
       } else {
