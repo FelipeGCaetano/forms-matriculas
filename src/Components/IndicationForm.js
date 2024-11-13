@@ -5,10 +5,9 @@ import FormsIndicador from './FormIndicador';
 import FormsIndicado from './FormIndicado';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { config } from 'dotenv';
-config()
 
-const backendUrl = process.env.BACKEND_URL
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL
 
 function IndicationForm() {
   const [formData1, setFormData1] = useState({ name: '', classs: '', shift: '', guardian: '', email: '' });
