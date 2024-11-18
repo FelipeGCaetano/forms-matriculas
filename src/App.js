@@ -1,5 +1,6 @@
 // App.js
 import React from 'react';
+import './styles.css'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import IndicationForm from './Components/IndicationForm';
 import Indications from './Components/Indications'

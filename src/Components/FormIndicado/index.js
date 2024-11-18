@@ -1,5 +1,5 @@
 // FormsIndicado.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 
 function FormsIndicado({ onDataChange }) {
@@ -10,9 +10,13 @@ function FormsIndicado({ onDataChange }) {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
-  const handleChange = () => {
+  // const handleChange = () => {
+  //   onDataChange({ name, classs, shift, guardian, phone, email });
+  // };
+
+  useEffect(() => {
     onDataChange({ name, classs, shift, guardian, phone, email });
-  };
+  }, [name, classs, shift, guardian, phone, email])
 
   return (
     <div className="form-container">
@@ -23,9 +27,10 @@ function FormsIndicado({ onDataChange }) {
             type="text"
             placeholder="Insira o nome"
             value={name}
+            required
             onChange={(e) => {
               setName(e.target.value);
-              handleChange(); // Atualiza os dados no componente pai ao alterar
+              // handleChange(); // Atualiza os dados no componente pai ao alterar
             }}
           />
         </Form.Group>
@@ -38,7 +43,7 @@ function FormsIndicado({ onDataChange }) {
             value={classs}
             onChange={(e) => {
               setClasss(e.target.value);
-              handleChange();
+              // handleChange();
             }}
           />
         </Form.Group>
@@ -49,7 +54,7 @@ function FormsIndicado({ onDataChange }) {
             value={shift}
             onChange={(e) => {
               setShift(e.target.value);
-              handleChange();
+              // handleChange();
             }}
           >
             <option value="">Selecione o turno</option>
@@ -67,7 +72,7 @@ function FormsIndicado({ onDataChange }) {
             value={guardian}
             onChange={(e) => {
               setGuardian(e.target.value);
-              handleChange();
+              // handleChange();
             }}
           />
         </Form.Group>
@@ -80,7 +85,7 @@ function FormsIndicado({ onDataChange }) {
             value={phone}
             onChange={(e) => {
               setPhone(e.target.value);
-              handleChange();
+              // handleChange();
             }}
           />
         </Form.Group>
@@ -93,7 +98,8 @@ function FormsIndicado({ onDataChange }) {
             value={email} // Corrigido para usar a variável de email
             onChange={(e) => {
               setEmail(e.target.value);
-              handleChange();
+              console.log('indicado email', e.target.value, '--', email)
+              // handleChange();
             }}
           />
         </Form.Group>

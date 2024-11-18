@@ -1,5 +1,5 @@
 // FormsIndicador.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
 function FormsIndicador({ onDataChange }) {
@@ -9,9 +9,13 @@ function FormsIndicador({ onDataChange }) {
   const [guardian, setGuardian] = useState('');
   const [email, setEmail] = useState('');
 
-  const handleChange = () => {
-    onDataChange({ name, classs, shift, guardian, email }); 
-  };
+  // const handleChange = () => {
+  //   onDataChange({ name, classs, shift, guardian, email }); 
+  // };
+
+  useEffect(() => {
+    onDataChange({ name, classs, shift, guardian, email });
+  }, [name, classs, shift, guardian, email])
 
   return (
     <div className="form-container">
@@ -22,9 +26,10 @@ function FormsIndicador({ onDataChange }) {
             type="text"
             placeholder="Insira o nome"
             value={name}
+            required
             onChange={(e) => {
               setName(e.target.value);
-              handleChange(); // Atualiza os dados no componente pai ao alterar
+              // handleChange(); // Atualiza os dados no componente pai ao alterar
             }}
           />
         </Form.Group>
@@ -35,9 +40,10 @@ function FormsIndicador({ onDataChange }) {
             type="text"
             placeholder="Insira a turma"
             value={classs}
+            required
             onChange={(e) => {
               setClasss(e.target.value);
-              handleChange();
+              // handleChange();
             }}
           />
         </Form.Group>
@@ -48,7 +54,7 @@ function FormsIndicador({ onDataChange }) {
             value={shift}
             onChange={(e) => {
               setShift(e.target.value);
-              handleChange();
+              // handleChange();
             }}
           >
             <option value="">Selecione o turno</option>
@@ -59,14 +65,14 @@ function FormsIndicador({ onDataChange }) {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicGuardian">
-          <Form.Label>Nome do pai</Form.Label>
+          <Form.Label>Nome do responsável</Form.Label>
           <Form.Control
             type="text"
             placeholder="Insira o nome do pai"
             value={guardian}
             onChange={(e) => {
               setGuardian(e.target.value);
-              handleChange();
+              // handleChange();
             }}
           />
         </Form.Group>
@@ -79,7 +85,7 @@ function FormsIndicador({ onDataChange }) {
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
-              handleChange();
+              // handleChange();
             }}
           />
         </Form.Group>

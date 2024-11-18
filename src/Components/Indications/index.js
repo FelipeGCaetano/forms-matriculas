@@ -24,8 +24,7 @@ function Indications() {
           setErrorMessage(response.data.message);
         }
       } catch (error) {
-        console.error('Erro ao fazer a requisição:', error);
-        setErrorMessage('Erro ao fazer a requisição ao backend');
+        setErrorMessage(error.response.data.message);
       }
     };
 
@@ -59,8 +58,7 @@ function Indications() {
         setErrorMessage(response.data.message);
       }
     } catch (error) {
-      console.error('Erro ao fazer a requisição:', error);
-      setErrorMessage('Erro ao fazer a requisição ao backend');
+      setErrorMessage(error.response.data.message);
     }
   };
 
@@ -114,7 +112,7 @@ function Indications() {
               <td>{item.guardian}</td>
               <td>{item.phone}</td>
               <td>{item.email}</td>
-              <td>{item.status}</td>
+              <td>{item.status}</td> 
               <td>{item.student.name}</td>
               <td>{item.student.email}</td>
               <td className="Action">
